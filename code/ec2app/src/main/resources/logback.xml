@@ -1,0 +1,12 @@
+<configuration debug="true">
+    <appender name="loggly" class="ch.qos.logback.ext.loggly.LogglyAppender">
+        <endpointUrl>http://logs-01.loggly.com/inputs/84f0d00e-8db9-421a-b85e-9909d2bc11cb/tag/test-executor</endpointUrl>
+        <pattern>%d{"ISO8601", UTC}  %p %t %c{0}.%M - %m%n</pattern>
+    </appender>
+    <logger name="org.apache.zookeeper" level="WARN" />
+    <logger name="twitter4j" level="WARN" />
+
+    <root level="debug">
+        <appender-ref ref="loggly" />
+    </root>
+</configuration>
